@@ -17,7 +17,8 @@ namespace AllSpace_Facilities
             MainMenuText();
             List<IGarage> garages = new List<IGarage>();
 
-            AddGarage<Car>(garages, 12);
+            Garage<Car> carGarage = new Garage<Car>(GetAvailableId(garages), parkingCapacity: 12);
+            garages.Add(carGarage);
 
             Garage<Vehicle> genericGarage = new Garage<Vehicle>(GetAvailableId(garages), parkingCapacity: 13);
             garages.Add(genericGarage);
