@@ -1,14 +1,13 @@
 ﻿namespace AllSpace_Facilities.Entities
 {
 
-    internal interface IGarage : IEnumerable<Vehicle>
+    public interface IGarage<T> : IEnumerable<T> where T : Vehicle
     {
-        int Id { get; }
         int ParkingCapacity { get; }
-    }
-
-    internal interface IGarage<T> : IGarage where T : Vehicle
-    {
         void AddVehicle(T item);
+        void RemoveVehicle(string licensePlate);
+        string GetVehicleType();
+        void GetGarageInfo();
+        void GetByLicensePlate(string licensePlate);
     }
 }
